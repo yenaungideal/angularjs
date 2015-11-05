@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="mouseOver" ng-controller="Controller">
+
+<button ng-mouseover="hover()" ng-init="count=0" ng-click="Calculate()"> 
+  Increment (when mouse is over)
+</button>
+count: {{count}}
+
+</div>	
+
+<script>
+	angular.module('mouseOver',[])
+	.controller('Controller',function($scope){
+
+		$scope.hover=function(){
+			var result =$scope.count + 1;
+			 $scope.count=result;
+
+		}
+		 $scope.Calculate = function() {
+         var result = $scope.count + 1;
+        $scope.count=result;
+    	};
+	})
+</script>
+</body>
+</html>
