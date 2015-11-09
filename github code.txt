@@ -11,3 +11,5 @@ git push origin master
 
 https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/#add-a-team    for Creating Team And Organization=======
 ">>>>>>> .r5
+
+http://blog.teamtreehouse.com/install-node-js-npm-windows
