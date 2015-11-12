@@ -1,0 +1,4 @@
+http://www.javacodegeeks.com/2014/03/single-page-application-with-angular-js-node-js-and-mongodb-mongojs-module.html
+http://www.aquafold.com/support-update.html#v15
+C:\Program Files\MongoDB\Server\3.0\bin>mongod --config C:\Program Files\MongoDB\Server\3.0\bin\mongo.config
+http://howtonode.org/node-js-and-mongodb-getting-started-with-mongojs
