@@ -1,0 +1,78 @@
+//Comparing 2 listbox selected data 
+
+
+function validateMap()
+    {
+        var values = "";
+        var values2 = "";
+        var listBox = document.getElementById("<%= lstQMColumns.ClientID%>");
+        var listBox2 = document.getElementById("<%= lstExcelColumns.ClientID%>");
+        for (var i = 0; i < listBox.options.length; i++) {
+            if (listBox.options[i].selected) {
+                values += listBox.options[i].innerHTML;
+            }
+        }
+
+        for (var i = 0; i < listBox2.options.length; i++) {
+            if (listBox2.options[i].selected) {
+                values2 += listBox2.options[i].innerHTML;
+            }
+        }
+
+        if (values == "WeldLength" || values == "PieceMarkWidth" || values == "PieceMarkLength" || values == "PieceMarkSize" || values == "ThicknessMat1" || values == "ThicknessMat2")
+        {
+            if (values2 == "WELD LENGTH" || values2 == "PIECEMARK WIDTH /DIAMETER/WEIGHT" || values2 == "PIECEMARK LENGTH" || values2 == "PIECEMARK SIZE/THICKNESS" || values2 == "THICKNESS 1 (MM)" || values2 == "THICKNESS 2 (MM)")
+            {
+                return true;
+            }
+            else
+            {
+               alert('Invalid Mapping');
+                return false;
+            }
+        }
+    }
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+    function validate() {
+        var isValid = Page_ClientValidate("RangeValidation"); //parameter is the validation group
+        var isValidTotalRows = Page_ClientValidate("RowValidation"); //parameter is the validation group
+        if (!isValid) { 
+            $("#<%= txtUploadFrom.ClientID %>").val(''); //jquery to clear the textbox
+            $("#<%= txtUploadTo.ClientID %>").val(''); //jquery to clear the textbox
+            alert('From Upload Range should not be greater than To Upload Range.');
+        }
+        else
+        {
+            if(!isValidTotalRows)
+            {
+                $("#<%= txtUploadTo.ClientID %>").val(''); //jquery to clear the textbox
+                alert('To Upload Range should not be greater than Total Rows.');
+            }
+        }
+        
+    }
+
+
+
+
+
+
+ <asp:CompareValidator ID="CompareValidatorRange" runat="server" ControlToCompare="txtUploadTo"
+                                    ControlToValidate="txtUploadFrom" Display="None" ErrorMessage="From Upload Range should not be greater than To Upload Range."
+                                    Operator="LessThanEqual" Type="Integer" ValidationGroup="RangeValidation"></asp:CompareValidator>
+ <asp:CompareValidator ID="CompareValidatorTotalRows" runat="server" ControlToCompare="txtRowTotal"
+                                    ControlToValidate="txtUploadTo" Display="None" ErrorMessage="To Upload Range should not be greater than Total Rows."
+                                    Operator="LessThanEqual" Type="Integer" ValidationGroup="RowValidation"></asp:CompareValidator>
+
+
+OnClientClick="validate()"  //Compare 2 text box using compare validator with java script
+
+
+
+
+
+
+ OnClientClick="return validateMap()"      /// Button On Client Click
