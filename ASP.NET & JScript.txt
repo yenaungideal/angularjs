@@ -1,0 +1,10 @@
+/----Alert And Function Call---/ 
+ Page.ClientScript.RegisterStartupScript(this.GetType(), "JsFunc", "alert('Please fill the PieceMarkNo.');", true);
+ ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowStatus", "javascript:alert('Record is not updated');", true);
+ ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "script", "ConfirmStatus();", true);  (Calling Client Side JS Function From Server Side)
+
+
+
+
+
+
