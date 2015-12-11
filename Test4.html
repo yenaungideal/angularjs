@@ -1,17 +1,17 @@
 <!doctype html>
-<html ng-app="mymodal">
+<html>
 <head>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  <!-- Scripts -->
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+ 
 </head>
 
-<body>
+<body ng-app="mymodal"  ng-controller="MainCtrl">
 
-  <div ng-controller="MainCtrl" class="container">
+  <div class="container">
     <button ng-click="toggleModal('Success')" class="btn btn-success">Success</button>
     <button ng-click="toggleModal('Remove')" class="btn btn-default">Remove</button>
     <button ng-click="toggleModal('Deny')" class="btn btn-default">Deny</button>
@@ -34,7 +34,7 @@
         $scope.showModal = !$scope.showModal;
       };
        $scope.Save_Click = function(balance) {
-        $window.alert(balance);
+          $window.alert(balance);
       };
 
     });
