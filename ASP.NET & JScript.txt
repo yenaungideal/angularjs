@@ -4,6 +4,10 @@
  ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "script", "ConfirmStatus();", true);  (Calling Client Side JS Function From Server Side)
 
 
+/--ASP.Net Code Snippet - -/
+http://www.codeproject.com/Articles/42077/Code-Snippet-Step-by-Step-Guideline-from-Creation
+
+
 
 
 
