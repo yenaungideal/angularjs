@@ -1,0 +1,12 @@
+    ASPxComboBox NDTRequestPieceMarkReportNumber = (sender as ASPxGridView).FindEditFormTemplateControl("NDTRequestPieceMarkReportNumber") as ASPxComboBox;
+                if (NDTRequestPieceMarkReportNumber != null)
+                {
+                    HiddenField HiddenReportID = (sender as ASPxGridView).FindEditFormTemplateControl("HiddenReportID") as HiddenField;
+                    if (Convert.ToString(HiddenReportID.Value) != "")
+                    {
+                        if (Convert.ToString(HiddenReportID.Value) != "0")
+                            OBNDTRequestPieceMarkReportNumber.SelectParameters["ReportID"].DefaultValue = Convert.ToString(HiddenReportID.Value);
+                            NDTRequestPieceMarkReportNumber.DataBindItems();
+                            NDTRequestPieceMarkReportNumber.SelectedIndex = NDTRequestPieceMarkReportNumber.Items.FindByValue(HiddenReportID.Value).Index;
+                    }
+                }
